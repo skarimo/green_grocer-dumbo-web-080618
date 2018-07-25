@@ -65,12 +65,9 @@ end
 def checkout(cart, coupons)
   items = []
   total = 0
-  coupons = []
+  coupons = coupons.length
     cart.each do |item|
       items = item.keys
-    end
-    coupons.each do |key|
-      binding.pry
     end
   
     if items.length == 1 && coupons.length == 0

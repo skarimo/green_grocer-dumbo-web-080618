@@ -72,7 +72,7 @@ def checkout(items, coupons)
   
   total = 0
   
-    
+    cart2.each do ||
 end
 
 

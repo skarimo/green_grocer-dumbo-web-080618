@@ -75,16 +75,17 @@ def checkout(cart, coupons)
   
     if items.length == 1 && coupons != 0
       consolidate_cart(carts)
-      apply_coupons(carts, coupons)
-        carts.each do |key|
+      apply_coupons(cart, coupons)
+        cart.each do |key|
           key.each do |k, v|
+            binding.pry
           total += v[:price]
         end
       end
     elsif items.length == 1 && coupons == 0
-       consolidate_cart(carts)
-       apply_clearance(carts)
-        carts.each do |key|
+       consolidate_cart(cart)
+       apply_clearance(cart)
+        cart.each do |key|
           key.each do |k, v|
           total += v[:price]
         end

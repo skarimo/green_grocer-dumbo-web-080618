@@ -48,7 +48,7 @@ while idx < coupons.length
     new_cart = {}
     idx += 1
   end
-if coupons.length == nil 
+if coupons.length == 0 
   cart
 end
      cart
@@ -73,9 +73,9 @@ def checkout(cart, coupons)
       items = item.keys
     end
   
-    if items.length == 1
+    if items.length == 1 && coupons == 0
       consolidate_cart(cart)
-      apply_coupons(cart, coupons)
+      apply_coupons(cart, coupons) unless coupons == 0
         cart.each do |key|
           key.each do |k, v|
             

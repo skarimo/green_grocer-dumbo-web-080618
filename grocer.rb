@@ -82,6 +82,7 @@ def checkout(cart, coupons)
         
     else    
     end 
+    total
 end
 
 

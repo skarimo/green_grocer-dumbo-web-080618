@@ -65,17 +65,14 @@ end
 def checkout(cart, coupons)
   items = []
   total = 0
-  carts = {}
-  
   coupons = coupons.length
     cart.each do |item|
       items = item.keys
-      carts = item
     end
   
     if items.length == 1 && coupons != 0
-      consolidate_cart(carts: [])
-      apply_coupons(carts: [], coupons: [])
+      consolidate_cart(cart)
+      apply_coupons(cart, coupons)
         cart.each do |key|
           key.each do |k, v|
           total += v[:price]

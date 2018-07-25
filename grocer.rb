@@ -72,9 +72,8 @@ def checkout(cart, coupons)
   
     if items.length == 1 && coupons == 0
       consolidate_cart(cart)
-      apply_clearance(cart)
+        
         cart.each do |k, v|
-          
           total += v[:price]
           
         end 

@@ -73,7 +73,7 @@ def checkout(cart, coupons)
       items = item.keys
     end
   
-    if items.length == 1 && coupons == 0
+    if items.length == 1
       consolidate_cart(cart)
       apply_coupons(cart, coupons) unless coupons == 0
         cart.each do |key|

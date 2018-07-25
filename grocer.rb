@@ -65,27 +65,19 @@ def apply_clearance(cart)
   cart
 end
 
-def checkout(cart, coupons)
-  items = []
-  total = 0
-  coupons = coupons.length
-    cart.each do |item|
-      items = item.keys
-    end
+def checkout(items, coupons)
+  cart = consolidate_cart(items)
+  cart1 = apply_coupons(cart, coupons)
+  cart2 = apply_clearance(cart1)
   
-    if items.length == 1 && coupons == 0
-      consolidate_cart(cart)
-      apply_coupons(cart, coupons) unless coupons == 0
-        cart.each do |key|
-          key.each do |k, v|
-            
-          total += v[:price]
-        end
-        end 
-        
-    else    
-    end 
-    total
+  total = 0
+  
+  cart2.each do |name, price_hash|
+    total += price_hash[:price] * price_hash[:count]
+  end
+  
+  total > 100 ? total * 0.9 : total
+  
 end
 
 

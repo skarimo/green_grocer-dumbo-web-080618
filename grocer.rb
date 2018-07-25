@@ -77,7 +77,7 @@ def checkout(cart, coupons)
           key.each do |k, v|
             
           total += v[:price]
-          
+        end
         end 
         
     else    

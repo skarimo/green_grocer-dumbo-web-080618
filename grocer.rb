@@ -77,6 +77,14 @@ def checkout(cart, coupons)
           key.each do |k, v|
           total += v[:price]
         end
+      end
+    elsif items.length == 1 && coupons == 0
+       consolidate_cart(cart)
+       apply_clearance(cart)
+        cart.each do |key|
+          key.each do |k, v|
+          total += v[:price]
+        end
         end 
         
     else    

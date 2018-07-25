@@ -48,6 +48,9 @@ while idx < coupons.length
     new_cart = {}
     idx += 1
   end
+if coupons.length == 0 
+  cart
+end
      cart
 end
 
